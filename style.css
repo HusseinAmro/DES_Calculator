@@ -219,11 +219,11 @@ td {
 .footer {
     color: skyblue;
     width: 100%;
-    margin-top: 1rem;
+    margin-top: 0.2rem;
 }
 
 .footer p {
-    margin: 0rem;
+    margin: 0;
     margin-left: 0.5rem;
 }
 
@@ -270,6 +270,10 @@ td {
 #menuButton:hover+#menu,
 #menu:hover {
     left: 0;
+}
+
+#menuButton:hover {
+    background-color: rgb(122, 128, 133);
 }
 
 .history-block {
@@ -374,6 +378,10 @@ td {
 #othermenuButton:hover+#othermenu,
 #othermenu:hover {
     right: 0;
+}
+
+#othermenuButton:hover {
+    background-color: rgb(122, 128, 133);
 }
 
 .page-container {
@@ -552,15 +560,17 @@ td {
         }
 
         #learnDesLink {
+            position: initial;
             background-color: transparent;
             padding: 0;
             border-radius: 0;
             box-shadow: none;
             border: none;
             top: auto;
-            bottom: 0.1rem;
-            right: 0.5rem;
             margin: 0;
+            margin-top: 1rem;
+            margin-left: 0.5rem;
+            font-size: 1rem;
         }
     }
 
@@ -680,10 +690,6 @@ td {
             font-size: 0.8rem;
         }
 
-        #learnDesLink {
-            font-size: 0.8rem;
-        }
-
         .replay-button {
             left: 1rem;
             top: 0.7rem;
@@ -718,10 +724,6 @@ td {
             font-size: 0.7rem;
         }
 
-        .footer p {
-            font-size: 0.7rem;
-        }
-
         .history-block {
             margin-top: 1.5rem;
         }
@@ -732,9 +734,6 @@ td {
     }
 
     @media (max-width: 320px) {
-        .footer p {
-            font-size: 0.6rem;
-        }
 
         .replay-button {
             left: 0.5rem;
