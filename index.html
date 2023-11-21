@@ -1,0 +1,88 @@
+<html>
+
+<head>
+    <title>DES Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+</head>
+
+<body>
+    <h1>DES Calculator</h1>
+
+    <button id="menuButton" onclick="showHist()">Show History</button>
+
+    <div id="menu">
+        <h3 class="desCalculationMenuTitle">
+            History of Calculations
+            <span class="replay-button" onclick="clearHistory()">↻</span>
+        </h3>
+    </div>
+
+    <button id="othermenuButton" onclick="showSlides()">DES Explained</button>
+
+    <div id="othermenu">
+        <h3 class="otherdesCalculationMenuTitle">Data Encryption Standard (DES)</h3>
+        <div class="page-container">
+            <img src="Slides/page1.jpg" alt="Page 1">
+        </div>
+        <div class="button-container">
+            <button class="prev-page" onclick="prevPage()"></button>
+            <span class="page-counter">Page <span id="currentPage">1</span> of <span id="totalPages">19</span></span>
+            <button class="next-page" onclick="nextPage()"></button>
+        </div>
+    </div>
+
+    <form class="inputCalc" id="desCalculator">
+        <label for="option">Choose an Option:</label>
+        <select id="option" name="option" onchange="changeInputLabel()">
+            <option value="encryption">Encryption</option>
+            <option value="decryption">Decryption</option>
+        </select>
+
+        <label for="key">Enter Key:</label>
+        <input type="text" id="key" name="key" required placeholder="Enter 64-bit key (in hex)">
+
+        <label for="inputText">Enter Plaintext: </label>
+        <input type="text" id="inputText" name="inputText" required placeholder="Enter 64-bit plaintext (in hex)">
+
+        <button type="button" onclick="calculateDES()">Calculate</button>
+    </form>
+
+    <form class="outputCalc" id="desResult">
+
+        <div class="result-container">
+            <div class="label-and-result">
+                <label for="result" class="resultLabel">Result Ciphertext = </label>
+                <pre id="result"></pre>
+            </div>
+            <button type="button" id="showExplanationButton" onclick="showExplanation()">Show Explanation</button>
+        </div>
+
+        <div id="explanationModal" class="modal">
+            <div class="modal-content">
+                <h3 id="expTitle">Encryption Steps:</h3>
+                <pre id="table-container"> Please calculate the result before! </pre>
+                <pre id="table-container-new"> No result yet! </pre>
+                <div class="result-label">
+                    <label for="resultExp" class="resultLabel2">Result Ciphertext = </label>
+                    <pre id="resultExp"></pre>
+                </div>
+                <button type="button" onclick="closeExplanation()">Done</button>
+            </div>
+        </div>
+
+    </form>
+
+    <a id="learnDesLink" href="https://youtube.com/playlist?list=PLBlnK6fEyqRiOCCDSdi6Ok_8PU2f_nkuf&feature=shared"
+        target="_blank">
+        DES Lectures
+    </a>
+
+    <div class="footer">
+        <p>&copy; 2023 EECE455_Group6. All Rights Reserved.</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
