@@ -763,7 +763,7 @@ td {
 @media (max-height: 600px) {
 
     .modal-content {
-        height: 60vh;
+        max-height: 60vh;
         overflow-y: auto;
     }
 
