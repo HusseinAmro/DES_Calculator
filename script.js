@@ -26,7 +26,7 @@ function addToHistory() {
     closeButton.innerHTML = "&times;";
     closeButton.classList.add("close-button");
     closeButton.setAttribute("onclick", "removeHistory(this, event)");
-    closeButton.addEventListener("click", function (event) {
+    closeButton.addEventListener("touchstart", function (event) {
         removeHistory(this, event);
     });
     closeButton.addEventListener("touchend", function (event) {
@@ -190,7 +190,7 @@ function showSlides() {
     var slideModal = document.getElementById("othermenuButton::hover+othermenu");
     slideModal.style.right = "0";
     slideModalHover.style.right = "0";
-    document.addEventListener("click", outsideClickHandler);
+    document.addEventListener("touchstart", outsideClickHandler);
 }
 
 function outsideClickHandler(event) {
@@ -205,7 +205,7 @@ function closeSlides() {
     var slideModal = document.getElementById("othermenuButton::hover+othermenu");
     slideModal.style.right = "initial";
     slideModalHover.style.right = "initial";
-    document.removeEventListener("click", outsideClickHandler);
+    document.removeEventListener("touchstart", outsideClickHandler);
 }
 
 function showHist() {
@@ -213,7 +213,7 @@ function showHist() {
     var hist = document.getElementById("menuButton::hover+menu");
     hist.style.right = "0";
     histHover.style.right = "0";
-    document.addEventListener("click", outsideClickHandlerHist);
+    document.addEventListener("touchstart", outsideClickHandlerHist);
 }
 
 function outsideClickHandlerHist(event) {
@@ -228,7 +228,7 @@ function closeHist() {
     var hist = document.getElementById("menuButton::hover+menu");
     hist.style.right = "initial";
     histHover.style.right = "initial";
-    document.removeEventListener("click", outsideClickHandlerHist);
+    document.removeEventListener("touchstart", outsideClickHandlerHist);
 }
 
 // Hexadecimal to binary conversion
