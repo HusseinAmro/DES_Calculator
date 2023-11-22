@@ -187,7 +187,7 @@ function showSlides() {
     var slideModal = document.getElementById("othermenuButton::hover+othermenu");
     slideModal.style.right = "0";
     slideModalHover.style.right = "0";
-    document.addEventListener("touchstart", outsideClickHandler);
+    window.addEventListener("touchstart", outsideClickHandler);
 }
 
 function outsideClickHandler(event) {
@@ -202,7 +202,7 @@ function closeSlides() {
     var slideModal = document.getElementById("othermenuButton::hover+othermenu");
     slideModal.style.right = "initial";
     slideModalHover.style.right = "initial";
-    document.removeEventListener("touchstart", outsideClickHandler);
+    window.removeEventListener("touchstart", outsideClickHandler);
 }
 
 function showHist() {
@@ -210,7 +210,7 @@ function showHist() {
     var hist = document.getElementById("menuButton::hover+menu");
     hist.style.right = "0";
     histHover.style.right = "0";
-    document.addEventListener("touchstart", outsideClickHandlerHist);
+    window.addEventListener("touchstart", outsideClickHandlerHist);
 }
 
 function outsideClickHandlerHist(event) {
@@ -225,7 +225,7 @@ function closeHist() {
     var hist = document.getElementById("menuButton::hover+menu");
     hist.style.right = "initial";
     histHover.style.right = "initial";
-    document.removeEventListener("touchstart", outsideClickHandlerHist);
+    window.removeEventListener("touchstart", outsideClickHandlerHist);
 }
 
 // Hexadecimal to binary conversion
