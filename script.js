@@ -26,6 +26,12 @@ function addToHistory() {
     closeButton.innerHTML = "&times;";
     closeButton.classList.add("close-button");
     closeButton.setAttribute("onclick", "removeHistory(this, event)");
+    closeButton.addEventListener("click", function (event) {
+        removeHistory(this, event);
+    });
+    closeButton.addEventListener("touchend", function (event) {
+        removeHistory(this, event);
+    });
     newHistoryBlock.insertBefore(closeButton, newHistoryBlock.firstChild);
 
     var historyEntry = document.createElement("p");
@@ -58,6 +64,8 @@ function loadHistory(historyBlock) {
 
 function removeHistory(closeButton, event) {
     event.stopPropagation();
+    event.preventDefault();
+
     var historyBlock = closeButton.parentElement;
     historyBlock.remove();
 }
