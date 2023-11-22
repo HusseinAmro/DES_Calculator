@@ -24,7 +24,7 @@ This project is a Data Encryption Standard (DES) calculator developed for the EE
   - Directs users to Neso Academy DES YouTube channel for additional lectures on DES.
 
 - **Responsive Design:**
-  - The website is designed to be user-friendly and is responsive to screens ranging from 280px width (smallest phone) to above 1200px (large screens), with appropriate changes.
+  - The website is designed to ensure user-friendliness, and it is responsive to screens ranging from 280px width (smallest phone) to above 1200px (large screens), encompassing both portrait and landscape modes on phones. Additionally, it fits various height dimensions (also from 28px till above 1200px), providing an optimal viewing experience across a diverse range of devices. The layout dynamically adjusts to deliver a consistent and visually appealing presentation, enhancing accessibility for all users.
 
 ## Usage
 
