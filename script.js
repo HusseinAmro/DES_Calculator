@@ -26,9 +26,6 @@ function addToHistory() {
     closeButton.innerHTML = "&times;";
     closeButton.classList.add("close-button");
     closeButton.setAttribute("onclick", "removeHistory(this, event)");
-    closeButton.addEventListener("touchstart", function (event) {
-        removeHistory(this, event);
-    });
     newHistoryBlock.insertBefore(closeButton, newHistoryBlock.firstChild);
 
     var historyEntry = document.createElement("p");
@@ -180,52 +177,6 @@ function showExplanation() {
 function closeExplanation() {
     var explanationModal = document.getElementById("explanationModal");
     explanationModal.style.display = "none";
-}
-
-function showSlides() {
-    var slideModalHover = document.getElementById("othermenu::hover");
-    var slideModal = document.getElementById("othermenuButton::hover+othermenu");
-    slideModal.style.right = "0";
-    slideModalHover.style.right = "0";
-    window.addEventListener("touchstart", outsideClickHandler);
-}
-
-function outsideClickHandler(event) {
-    var slideModal = document.getElementById("othermenu");
-    if (event.target !== slideModal && !slideModal.contains(event.target)) {
-        closeSlides();
-    }
-}
-
-function closeSlides() {
-    var slideModalHover = document.getElementById("othermenu::hover");
-    var slideModal = document.getElementById("othermenuButton::hover+othermenu");
-    slideModal.style.right = "initial";
-    slideModalHover.style.right = "initial";
-    window.removeEventListener("touchstart", outsideClickHandler);
-}
-
-function showHist() {
-    var histHover = document.getElementById("menu::hover");
-    var hist = document.getElementById("menuButton::hover+menu");
-    hist.style.right = "0";
-    histHover.style.right = "0";
-    window.addEventListener("touchstart", outsideClickHandlerHist);
-}
-
-function outsideClickHandlerHist(event) {
-    var histModal = document.getElementById("menu");
-    if (event.target !== histModal && !histModal.contains(event.target)) {
-        closeHist();
-    }
-}
-
-function closeHist() {
-    var histHover = document.getElementById("menu::hover");
-    var hist = document.getElementById("menuButton::hover+menu");
-    hist.style.right = "initial";
-    histHover.style.right = "initial";
-    window.removeEventListener("touchstart", outsideClickHandlerHist);
 }
 
 // Hexadecimal to binary conversion
