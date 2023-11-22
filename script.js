@@ -29,9 +29,6 @@ function addToHistory() {
     closeButton.addEventListener("touchstart", function (event) {
         removeHistory(this, event);
     });
-    closeButton.addEventListener("touchend", function (event) {
-        removeHistory(this, event);
-    });
     newHistoryBlock.insertBefore(closeButton, newHistoryBlock.firstChild);
 
     var historyEntry = document.createElement("p");
