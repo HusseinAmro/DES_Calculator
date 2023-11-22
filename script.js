@@ -192,7 +192,7 @@ function showSlides() {
 
 function outsideClickHandler(event) {
     var slideModal = document.getElementById("othermenu");
-    if (!slideModal.contains(event.target)) {
+    if (event.target !== slideModal && !slideModal.contains(event.target)) {
         closeSlides();
     }
 }
@@ -215,7 +215,7 @@ function showHist() {
 
 function outsideClickHandlerHist(event) {
     var histModal = document.getElementById("menu");
-    if (!histModal.contains(event.target)) {
+    if (event.target !== histModal && !histModal.contains(event.target)) {
         closeHist();
     }
 }
