@@ -59,10 +59,6 @@ function loadHistory(historyBlock) {
     document.getElementById("key").value = key;
     document.getElementById("inputText").value = text;
     document.getElementById("option").value = option;
-    if ((window.innerWidth < 1200) && (window.innerHeight < 1200)) {
-        var slideModal = document.getElementById("menu");
-        slideModal.style.left = "-200%";
-    }
     changeInputLabel();
 }
 
