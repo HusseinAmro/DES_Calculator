@@ -26,6 +26,12 @@ function addToHistory() {
     closeButton.innerHTML = "&times;";
     closeButton.classList.add("close-button");
     closeButton.setAttribute("onclick", "removeHistory(this, event)");
+    closeButton.addEventListener("click", function (event) {
+        removeHistory(this, event);
+    });
+    closeButton.addEventListener("touchend", function (event) {
+        removeHistory(this, event);
+    });
     newHistoryBlock.insertBefore(closeButton, newHistoryBlock.firstChild);
 
     var historyEntry = document.createElement("p");
@@ -59,7 +65,6 @@ function loadHistory(historyBlock) {
 function removeHistory(closeButton, event) {
     event.stopPropagation();
     event.preventDefault();
-
     var historyBlock = closeButton.parentElement;
     historyBlock.remove();
 }
@@ -177,6 +182,46 @@ function showExplanation() {
 function closeExplanation() {
     var explanationModal = document.getElementById("explanationModal");
     explanationModal.style.display = "none";
+}
+
+function showSlides() {
+    var slideModal = document.getElementById("othermenu");
+    slideModal.style.right = "0";
+    document.addEventListener("click", outsideClickHandler);
+}
+
+function outsideClickHandler(event) {
+    var slideModal = document.getElementById("othermenu");
+    var slideModalButton = document.getElementById("othermenuButton");
+    if (!slideModal.contains(event.target) && !slideModalButton.contains(event.target)) {
+        closeSlides();
+    }
+}
+
+function closeSlides() {
+    var slideModal = document.getElementById("othermenu");
+    slideModal.style.right = "-200%";
+    document.removeEventListener("click", outsideClickHandler);
+}
+
+function showHist() {
+    var histModal = document.getElementById("menu");
+    histModal.style.left = "0";
+    document.addEventListener("click", outsideClickHandlerHist);
+}
+
+function outsideClickHandlerHist(event) {
+    var histModal = document.getElementById("menu");
+    var histModalButton = document.getElementById("menuButton");
+    if (!histModal.contains(event.target) && !histModalButton.contains(event.target)) {
+        closeHist();
+    }
+}
+
+function closeHist() {
+    var histModal = document.getElementById("menu");
+    histModal.style.left = "-200%";
+    document.removeEventListener("click", outsideClickHandlerHist);
 }
 
 // Hexadecimal to binary conversion
