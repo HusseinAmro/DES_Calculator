@@ -28,6 +28,8 @@ This project is a Data Encryption Standard (DES) calculator developed for the EE
 
 ## Usage
 
+Kindly use https://des-calculator.pages.dev/ to access the website
+
 1. Enter the required parameters in the input box.
 2. Click the "Calculate" button inside the input box to perform the DES operation.
 3. Use the "Show Explanation" button inside the output box to view the detailed steps of the calculation.
