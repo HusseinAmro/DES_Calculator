@@ -40,5 +40,3 @@ This project is a Data Encryption Standard (DES) calculator developed for the EE
 ## License
 
 © 2023 EECE455_Group6. All Rights Reserved.
-
-This project is protected by copyright. Unauthorized use and reproduction of the project or its components, in whole or in part, without the express permission of EECE455_Group6 is strictly prohibited.
